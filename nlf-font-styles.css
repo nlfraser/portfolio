@@ -1,0 +1,106 @@
+@charset "UTF-8";
+/* Heading */
+	.nlf-heading,.nlf-alt-heading{
+		font-size:calc(1.75rem + (80 - 28) * ((100vw - 375px) / (1920 - 375)));
+		line-height:calc(2rem + (96 - 32) * ((100vw - 375px) / (1920 - 375)))
+	}
+	.nlf-subheading,.nlf-alt-subheading{
+		font-size:calc(1.25rem + (32 - 20) * ((100vw - 375px) / (1920 - 375)));
+		line-height:calc(1.5rem + (40 - 24) * ((100vw - 375px) / (1920 - 375)))
+	}
+
+/* Paragraphs */
+	.nlf-paragraph{
+		font-size:calc(.875rem + (18 - 14) * ((100vw - 375px) / (1920 - 375)))
+	}
+	.nlf-paragraph.small-print{
+		font-size:calc(.75rem + (14 - 12) * ((100vw - 375px) / (1920 - 375)))
+	}
+
+/* Lists */
+	.nlf-expertise:not(:last-child)::after{
+		content:"/";
+		margin-left:var(--nlf-baseline);
+		color:var(--nlf-mid)
+	}
+
+/* Buttons */
+	.nlf-button::before,.nlf-button::after{
+		content:"";
+		position:absolute;
+		top:0;
+		left:100%;
+	    width:3rem;
+		height:3rem
+	}
+	.nlf-button::before{
+		background:var(--nlf-brand);
+	    transition:var(--nlf-fast);
+	    transform:scaleX(0);
+	    transform-origin:inherit
+	}
+	.nlf-button.brand::before{
+		background:var(--nlf-dark)
+	}
+	.nlf-button:hover::before{
+		transform:scaleX(1)
+	}
+	.nlf-button::after{
+		background-repeat:no-repeat;
+		background-size:12rem 3rem;
+		background-position:-9rem center;
+		background-image:url(https://uploads-ssl.webflow.com/645155f83a6c9b7cbde35382/6452773999312f86df1b959b_nlf-icon_button-arrow-light.svg);
+	    transition:inherit
+	}
+	.nlf-button:hover::after{
+		background-position:left center
+	}
+
+/* Links */
+	.nlf-link .dash:first-child::before{
+	    content:"";
+	    margin-left:.5rem
+	}
+	.nlf-link.nav-link .dash:first-child::before{
+	    margin-bottom:.5rem
+	}
+	.nlf-link .dash:first-child,.nlf-link:hover .dash:nth-child(3){
+		transition-delay:0.2s
+	}
+	.nlf-link .dash:nth-child(2),.nlf-link:hover .dash:nth-child(2){
+		transition-delay:0.1s
+	}
+	.nlf-link .dash:nth-child(3),.nlf-link:hover .dash:first-child{
+		transition-delay:0s
+	}
+	.nlf-link:hover .dash{
+		color:var(--nlf-brand)
+	}
+
+/*.disabled .nlf-link{
+color:var(--nlf-mid);
+pointer-events:none
+}*/
+
+	.nlf-heading::before{
+		content:"/";
+		margin-right:1vh;
+	}
+	span.nlf-heading::before{
+		content:"";
+	}
+	span.nlf-heading::after{
+		content:" ";
+	}
+/*h3.nlf-heading-alt{
+	position:relative;
+	margin-left:var(--nlf-spacing-large)
+}
+h3.nlf-heading-alt::before {
+	content:"";
+	width:var(--nlf-spacing-small);
+    height:100%;
+	position:absolute;
+	left:calc(0vh - var(--nlf-spacing-large));
+    background:var(--nlf-red)
+}*/
